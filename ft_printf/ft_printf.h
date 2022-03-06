@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:19:21 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/05 19:17:51 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/06 16:45:02 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <unistd.h>
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 
 int	ft_printf(const char *format, ...);
 int	ft_printf_iteri(const char *format, va_list *args, int counter, int i);

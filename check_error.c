@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 19:44:31 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/06 16:23:41 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/03/06 16:24:53 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/03/06 17:07:18 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int check_error(int argc, char **argv)
 {
+	if (argc == 1)
+		return (0);
+	else if ()
 }
