@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:24:53 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/06 17:07:18 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:27:05 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,4 @@
 
 int check_error(int argc, char **argv)
 {
-	if (argc == 1)
-		return (0);
-	else if ()
 }
