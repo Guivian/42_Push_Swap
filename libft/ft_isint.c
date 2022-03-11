@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 19:44:31 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/11 19:38:19 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/03/11 18:38:54 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/03/11 19:09:38 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+int	ft_isint(char *str)
 {
-	if (check_error(argc, argv) == 0)
+	int	i;
+
+	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i])
 	{
-		ft_printf("Error\n");
-		return (0);
+		if (str[i] <= '0' || str[i] >= '9')
+			return (0);
+		i++;
 	}
+	return (1);
 }

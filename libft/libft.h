@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 21:03:23 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/27 19:12:51 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:11:04 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include <strings.h>
 
+int			ft_isint(char *str);
 int			ft_write(int i);
 int			ft_put_unsigned_number(unsigned int n);
 int			ft_putnumber(int n);

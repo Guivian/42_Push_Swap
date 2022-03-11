@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:16:01 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/07 17:57:06 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:57:52 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+int		check_error(int argc, char **argv);
 t_stack	*stacknew(int n);
 #endif
