@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 17:36:50 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/07 18:52:26 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/13 21:09:26 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*stacknew(int n)
 {
-	t_stack *nbr;
+	t_stack	*nbr;
 	t_stack	*temp;
 
 	nbr = NULL;
@@ -27,9 +27,9 @@ t_stack	*stacknew(int n)
 	return (nbr);
 }
 
-t_stack *stacklast(t_stack *stack)
+t_stack	*stacklast(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (stack == NULL)
 		return (NULL);
@@ -41,7 +41,7 @@ t_stack *stacklast(t_stack *stack)
 
 void	stackadd_back(t_stack **stack, t_stack *new)
 {
-	t_stack *last;
+	t_stack	*last;
 
 	last = *stack;
 	if (last == NULL)
