@@ -6,13 +6,13 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 20:33:59 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/18 01:03:23 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/18 18:58:17 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_stack *stack, int argc, char **argv)
+void	init_stack(t_stack **stack_a, int argc, char **argv)
 {
 	int		*pre_stack;
 	t_stack	*temp;
@@ -29,10 +29,9 @@ void	init_stack(t_stack *stack, int argc, char **argv)
 	while (pre_stack[++i])
 	{
 		temp = stacknew(pre_stack[i]);
-		stackadd_front(&stack, temp);
+		stackadd_front(stack_a, temp);
 		temp = temp->next;
 	}
-//	printf_list(stack);
 }
 
 t_stack	*stacknew(int n)
@@ -56,27 +55,14 @@ void	stackadd_front(t_stack **stack, t_stack *new)
 	*stack = new;
 }
 
-void	printf_list(t_stack *stack_a)
+void	printf_list(t_stack *stack)
 {
 	t_stack	*temp;
 
-	temp = stack_a;
-	ft_printf("stack_a:\n");
+	temp = stack;
 	while (temp != NULL)
 	{
 		ft_printf("%d\n", temp->n);
 		temp = temp->next;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	t_stack	*stack;
-
-	stack = NULL;
-	init_stack(stack, argc, argv);
-	printf_list(stack);
-	switchtop(&stack);
-	ft_printf("after sa: ");
-	printf_list(stack);
 }
