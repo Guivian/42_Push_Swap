@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 20:33:59 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/18 18:58:17 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/24 23:16:07 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	init_stack(t_stack **stack_a, int argc, char **argv)
 	t_stack	*temp;
 	int		i;
 
-	pre_stack = malloc(sizeof(int) * (argc - 1));
+	pre_stack = malloc(sizeof(int) * (argc));
 	if (pre_stack == NULL)
 		return ;
 	temp = NULL;
@@ -26,7 +26,7 @@ void	init_stack(t_stack **stack_a, int argc, char **argv)
 	while (argv[++i])
 		pre_stack[i - 1] = ft_atoi(argv[i]);
 	i = -1;
-	while (pre_stack[++i])
+	while (++i < argc - 1)
 	{
 		temp = stacknew(pre_stack[i]);
 		stackadd_front(stack_a, temp);

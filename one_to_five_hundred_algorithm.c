@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_switchtop.c                                :+:      :+:    :+:   */
+/*   one_to_five_hundred_algorithm.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 18:40:05 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/17 19:27:08 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/03/28 21:03:31 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/03/29 11:48:46 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	switchtop(t_stack **stack)
+int	**separe_chunks(int argc, char **argv)
 {
-	int	temp;
+	int	**chunks;
+	int	i;
 
-	temp = (*stack)->n;
-	(*stack)->n = (*stack)->next->n;
-	(*stack)->next->n = temp;
+	chunks = malloc(sizeof(int) * (argc - 1));
+	if (chunks == NULL)
+		return (NULL);
+	i = -1;
+	while (++i <= (argc - 1))
+		chunks[i] = malloc(sizeof(int) * (argc - 1));
 }
 
-void	switch_a(t_stack **stack_a)
+void	one_hundred_random_numbers(t_stack **stack_a, t_stack **stack_b)
 {
-	switchtop(stack_a);
-	write(1, "sa\n", 3);
-}
+	t_stack	*temp;
+	int		n;
 
-void	switch_b(t_stack **stack_b)
-{
-	switchtop(stack_b);
-	write(1, "sb\n", 3);
-}
-
-void	switch_ab(t_stack **stack_a, t_stack **stack_b)
-{
-	switchtop(stack_a);
-	switchtop(stack_b);
-	write(1, "ss\n", 3);
+	temp = stack_a;
 }

@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:40:00 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/18 18:56:42 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/20 21:58:06 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 		stackadd_front(stack_b, temp);
 		delete_headnode(stack_a);
 	}
+	write(1, "pb\n", 3);
 }
 
 void	push_a(t_stack **stack_a, t_stack **stack_b)
@@ -42,13 +43,14 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 	temp = stacknew((*stack_b)->n);
 	stackadd_front(stack_a, temp);
 	delete_headnode(stack_b);
+	write(1, "pa\n", 3);
 }
 
 void	delete_headnode(t_stack **stack)
 {
 	t_stack	*temp;
 
-	temp = (*stack);
+	temp = *stack;
 	if (temp != NULL)
 	{
 		*stack = temp->next;

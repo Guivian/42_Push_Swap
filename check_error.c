@@ -6,13 +6,13 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:24:53 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/13 20:58:26 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/24 23:37:34 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			check_duplicate(long int	*pre_stack, int i);
+int			check_duplicate(long int	*pre_stack, int i, int argc);
 long int	ps_atoi(const char *str);
 
 int	check_error(int argc, char **argv)
@@ -21,8 +21,10 @@ int	check_error(int argc, char **argv)
 	int			i;
 
 	i = 1;
-	pre_stack = malloc(sizeof(long int) * (argc - 1));
+	pre_stack = malloc(sizeof(long int) * (argc));
 	if (pre_stack == NULL)
+		return (0);
+	if (argc == 1)
 		return (0);
 	while (argv[i])
 	{
@@ -33,21 +35,21 @@ int	check_error(int argc, char **argv)
 			return (0);
 		i++;
 	}
-	if (check_duplicate(pre_stack, i) == 0)
+	if (check_duplicate(pre_stack, i, argc) == 0)
 		return (0);
 	return (1);
 }
 
-int	check_duplicate(long int	*pre_stack, int i)
+int	check_duplicate(long int	*pre_stack, int i, int argc)
 {
 	int	j;
 
 	j = 1;
 	i = 0;
-	while (pre_stack[i])
+	while (i <= argc - 1)
 	{
 		j = 1;
-		while (pre_stack[j + i])
+		while (j + i <= argc - 1)
 		{
 			if (pre_stack[j + i] == pre_stack[i])
 				return (0);

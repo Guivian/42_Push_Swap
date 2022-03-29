@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:16:01 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/18 18:56:52 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/03/25 19:40:37 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,18 @@ int		check_error(int argc, char **argv);
 void	init_stack(t_stack **stack_a, int argc, char **argv);
 void	stackadd_front(t_stack **stack_a, t_stack *new);
 void	printf_list(t_stack *stack_a);
-void	switchtop(t_stack **stack);
-void	switch_a(t_stack **stack_a);
-void	switch_b(t_stack **stack_b);
-void	switch_ab(t_stack **stack_a, t_stack **stack_b);
-void	push_b(t_stack **stack_a, t_stack **stack_b);
+void	swap_top2_a(t_stack **stack_a);
+void	swap_top2_b(t_stack **stack_b);
+void	swap_top2_ab(t_stack **stack_a, t_stack **stack_b);
 void	push_a(t_stack **stack_a, t_stack **stack_b);
+void	push_b(t_stack **stack_a, t_stack **stack_b);
+void	rotate_a(t_stack **stack_a);
+void	rotate_b(t_stack **stack_b);
+void	rotate_ab(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate_a(t_stack **stack_a);
+void	reverse_rotate_b(t_stack **stack_b);
+void	reverse_rotate_ab(t_stack **stack_a, t_stack **stack_b);
+void	choose_algorithm(int argc, t_stack **stack_a);
 t_stack	*stacknew(int n);
 
 #endif
