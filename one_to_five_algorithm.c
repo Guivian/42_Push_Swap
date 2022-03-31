@@ -17,7 +17,7 @@ void	five_random_numbers(t_stack **stack_a, t_stack **stack_b, int argc);
 void	organize_from_stack_b_1(t_stack **stack_a, t_stack *temp, int n);
 void	organize_from_stack_b_2(t_stack **stack_a, t_stack *temp, int n);
 
-void	choose_algorithm(int argc, char **argv, t_stack **stack_a)
+void	choose_algorithm(int argc, t_stack **stack_a)
 {
 	t_stack	*stack_b;
 
@@ -31,6 +31,8 @@ void	choose_algorithm(int argc, char **argv, t_stack **stack_a)
 		three_random_numbers(stack_a);
 	else if (argc == 5 || argc == 6)
 		five_random_numbers(stack_a, &stack_b, argc);
+	else if (argc >= 7 && argc <= 101)
+		one_hundred_random_numbers(stack_a, &stack_b, argc);
 	else
 	{
 		ft_printf("Not ready yet!\n");
