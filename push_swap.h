@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:16:01 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/08 16:00:13 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:36:15 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_stack
 }	t_stack;
 
 int		check_error(int argc, char **argv);
-void	init_stack(t_stack **stack_a, int argc, char **argv, int *chunk);
+int		*init_stack(t_stack **stack_a, int argc, char **argv);
 void	stackadd_front(t_stack **stack_a, t_stack *new);
 void	printf_list(t_stack *stack_a);
 void	swap_top2_a(t_stack **stack_a);
@@ -36,8 +36,8 @@ void	rotate_ab(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rotate_a(t_stack **stack_a);
 void	reverse_rotate_b(t_stack **stack_b);
 void	reverse_rotate_ab(t_stack **stack_a, t_stack **stack_b);
-void	choose_algorithm(int argc, t_stack **stack_a);
-void	big_numbers1(t_stack **stack_a, t_stack **stack_b, int argc);
+void	choose_algorithm(int argc, t_stack **stack_a, int *chunk);
+void	big_numbers1(t_stack **stack_a, t_stack **stack_b, int argc, int *ar);
 t_stack	*stacknew(int n);
 
 #endif

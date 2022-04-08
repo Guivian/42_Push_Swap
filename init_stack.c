@@ -6,32 +6,33 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 20:33:59 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/06 21:50:29 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:24:22 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_stack **stack_a, int argc, char **argv, int *chunk)
+int	*init_stack(t_stack **stack_a, int argc, char **argv)
 {
-//	int		*pre_stack;
+	int		*pre_stack;
 	t_stack	*temp;
 	int		i;
 
-	chunk = malloc(sizeof(int) * (argc));
-	if (chunk == NULL)
-		return ;
+	pre_stack = malloc(sizeof(int) * (argc));
+	if (pre_stack == NULL)
+		return (0);
 	temp = NULL;
 	i = 0;
 	while (argv[++i])
-		chunk[i - 1] = ft_atoi(argv[i]);
+		pre_stack[i - 1] = ft_atoi(argv[i]);
 	i = -1;
 	while (++i < argc - 1)
 	{
-		temp = stacknew(chunk[i]);
+		temp = stacknew(pre_stack[i]);
 		stackadd_front(stack_a, temp);
 		temp = temp->next;
 	}
+	return (pre_stack);
 }
 
 t_stack	*stacknew(int n)
