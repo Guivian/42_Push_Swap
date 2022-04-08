@@ -32,10 +32,8 @@ void	choose_algorithm(int argc, t_stack **stack_a)
 	else if (argc == 5 || argc == 6)
 		five_random_numbers(stack_a, &stack_b, argc);
 	else if (argc >= 7 && argc <= 501)
-		one_hundred_random_numbers(stack_a, &stack_b, argc);
-	else
 	{
-		ft_printf("Not ready yet!\n");
+		big_numbers1(stack_a, &stack_b, argc);
 	}
 }
 

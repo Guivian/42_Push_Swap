@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:24:53 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/24 23:37:34 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/02 00:34:11 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	check_duplicate(long int	*pre_stack, int i, int argc)
 	while (i <= argc - 1)
 	{
 		j = 1;
-		while (j + i <= argc - 1)
+		while (j + i < argc - 1)
 		{
 			if (pre_stack[j + i] == pre_stack[i])
 				return (0);
