@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:03:31 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/08 17:33:31 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/11 19:00:35 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	**separe_chunks(int	*chunk, int argc, int **new_chunks)
 	if (new_chunks == NULL)
 		return (0);
 	i = -1;
-	while (++i < 5)
+	while (++i < 6)
 	{
 		new_chunks[i] = malloc(sizeof(int) * 20);
 		if (new_chunks[i] == NULL)
