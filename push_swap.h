@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:16:01 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/20 18:22:54 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/20 19:39:01 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	rotate_ab(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rotate_a(t_stack **stack_a);
 void	reverse_rotate_b(t_stack **stack_b);
 void	reverse_rotate_ab(t_stack **stack_a, t_stack **stack_b);
-void	choose_algorithm(int argc, t_stack **stack_a, int *chunk);
-void	big_numbers1(t_stack **stack_a, t_stack **stack_b, int argc, int *ar);
+void	choose_algorithm(int argc, t_stack **stack_a);
+void	big_numbers1(t_stack **stack_a, t_stack **stack_b, int argc);
 t_stack	*stacknew(int n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 18:20:54 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/20 18:23:42 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/20 20:17:23 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*stacknew(int n)
 	t_stack	*temp;
 
 	head = NULL;
-	temp = (t_stack *)malloc(sizeof(t_stack));
+	temp = malloc(sizeof(t_stack) * 1);
 	if (temp == NULL)
 		return (NULL);
 	temp->n = n;

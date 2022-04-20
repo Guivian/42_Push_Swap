@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:48:03 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/11 19:41:45 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/20 19:41:36 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	five_random_numbers(t_stack **stack_a, t_stack **stack_b, int argc);
 void	organize_from_stack_b_1(t_stack **stack_a, t_stack *temp, int n);
 void	organize_from_stack_b_2(t_stack **stack_a, t_stack *temp, int n);
 
-void	choose_algorithm(int argc, t_stack **stack_a, int *chunk)
+void	choose_algorithm(int argc, t_stack **stack_a)
 {
 	t_stack	*stack_b;
 
@@ -32,7 +32,7 @@ void	choose_algorithm(int argc, t_stack **stack_a, int *chunk)
 	else if (argc == 5 || argc == 6)
 		five_random_numbers(stack_a, &stack_b, argc);
 	else if (argc >= 7 && argc <= 101)
-		big_numbers1(stack_a, &stack_b, argc, chunk);
+		big_numbers1(stack_a, &stack_b, argc);
 	else if (argc >= 102)
 		ft_printf("Not Ready Yet!\n");
 }
