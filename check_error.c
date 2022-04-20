@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:24:53 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/02 00:34:11 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:46:09 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ int	check_error(int argc, char **argv)
 	{
 		if (ft_isint(argv[i]) == 0)
 			return (0);
+		if (argv[i][0] == '-' || argv[i][0] == '+')
+			if (argv[i][1] < 48 || argv[i][1] > 57)
+				return (0);
 		pre_stack[i - 1] = ps_atoi(argv[i]);
 		if (pre_stack[i - 1] > 2147483647 || pre_stack[i - 1] < -2147483648)
 			return (0);

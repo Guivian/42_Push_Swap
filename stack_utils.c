@@ -1,39 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack.c                                       :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 20:33:59 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/08 16:24:22 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/04/20 18:20:54 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/04/20 18:23:42 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	*init_stack(t_stack **stack_a, int argc, char **argv)
-{
-	int		*pre_stack;
-	t_stack	*temp;
-	int		i;
-
-	pre_stack = malloc(sizeof(int) * (argc));
-	if (pre_stack == NULL)
-		return (0);
-	temp = NULL;
-	i = 0;
-	while (argv[++i])
-		pre_stack[i - 1] = ft_atoi(argv[i]);
-	i = -1;
-	while (++i < argc - 1)
-	{
-		temp = stacknew(pre_stack[i]);
-		stackadd_front(stack_a, temp);
-		temp = temp->next;
-	}
-	return (pre_stack);
-}
 
 t_stack	*stacknew(int n)
 {
@@ -54,6 +31,32 @@ void	stackadd_front(t_stack **stack, t_stack *new)
 {
 	new->next = *stack;
 	*stack = new;
+}
+
+void	stackadd_back(t_stack **stack, t_stack *new)
+{
+	t_stack	*last;
+
+	last = *stack;
+	if (last == NULL)
+	{
+		*stack = new;
+		return ;
+	}
+	last = stack_last(*stack);
+	last->next = new;
+}
+
+t_stack	*stack_last(t_stack *stack)
+{
+	t_stack	*temp;
+
+	if (stack == NULL)
+		return (NULL);
+	temp = stack;
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
 }
 
 void	printf_list(t_stack *stack)

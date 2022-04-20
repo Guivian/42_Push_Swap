@@ -6,13 +6,58 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:03:31 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/11 19:00:35 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:58:14 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int	**separe_chunks(int	*chunk, int argc, int **new_chunks);
+
+/*void	big_numbers1(t_stack **stack_a, t_stack **stack_b, int argc, int *ar)
+{
+	int		**new_chunks;
+	t_stack	*temp;
+	int		i;
+
+	new_chunks = NULL;
+	new_chunks = separe_chunks(ar, argc, new_chunks);
+}
+
+int	scan_stack(t_stack **stack_a, int **new_chunks, int i, int argc)
+{
+	t_stack	*temp;
+	int		j;
+	int		n1;
+	int		n2;
+
+	temp = *stack_a;
+	n1 = 0;
+	n2 = 0;
+	while (temp->next != NULL && new_chunks[i][j] != temp->n)
+	{
+		j = -1;
+		compare_stack_chunk(new_chunks, temp, j, n);
+		temp = temp->next;
+		n1++;
+	}
+	while (temp->next != NULL && new_chunks[i][j] != temp->n)
+	{
+		j = -1;
+		while (++j < 20 && n2 >= ((argc - 1) / 2))
+			if (new_chunks[i][j] == temp->n)
+				break ;
+		temp = temp->next;
+		n2++;
+	}
+}
+
+void	compare_stack_chunk(int **new_chunks, t_stack *temp, int j)
+{
+	while (++j < 20)
+		if (new_chunks[i][j] == temp->n)
+			break ;
+}*/
 
 void	big_numbers1(t_stack **stack_a, t_stack **stack_b, int argc, int *ar)
 {
@@ -25,8 +70,6 @@ void	big_numbers1(t_stack **stack_a, t_stack **stack_b, int argc, int *ar)
 
 	new_chunks = NULL;
 	new_chunks = separe_chunks(ar, argc, new_chunks);
-//	ft_printf("%i\n", new_chunks[2][10]);
-
 	iterate_push_a = argc;
 	while (--argc > 0)
 	{
@@ -72,16 +115,12 @@ int	**separe_chunks(int	*chunk, int argc, int **new_chunks)
 	int	j;
 	int	k;
 
-	new_chunks = malloc(sizeof(int) * 5);
+	new_chunks = malloc(sizeof(int) * 7);
 	if (new_chunks == NULL)
 		return (0);
 	i = -1;
-	while (++i < 6)
-	{
+	while (++i < 5)
 		new_chunks[i] = malloc(sizeof(int) * 20);
-		if (new_chunks[i] == NULL)
-			return (0);
-	}
 	i = -1;
 	j = 0;
 	k = -1;
@@ -90,11 +129,9 @@ int	**separe_chunks(int	*chunk, int argc, int **new_chunks)
 		if (i == 20 || i == 40 || i == 60 || i == 80)
 		{
 			j++;
-			ft_printf("separe chunk\n");
 			k = -1;
 		}
 		new_chunks[j][++k] = chunk[i];
-		ft_printf("%i\n", new_chunks[j][k]);
 	}
 	return (new_chunks);
 }
