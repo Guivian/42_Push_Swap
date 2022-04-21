@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:40:00 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/20 18:23:28 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/21 18:22:37 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,6 @@ void	delete_headnode(t_stack **stack)
 
 	temp = *stack;
 	if (temp != NULL)
-	{
 		*stack = temp->next;
-		free(temp);
-	}
 	return ;
 }

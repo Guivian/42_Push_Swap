@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 21:20:07 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/20 21:58:20 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/21 18:19:15 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*temp;
-	t_stack	*last;
 	int		store;
 
 	temp = *stack;
@@ -28,9 +27,7 @@ void	reverse_rotate(t_stack **stack)
 	temp = *stack;
 	while (temp->next->next != NULL)
 		temp = temp->next;
-	last = temp->next;
 	temp->next = NULL;
-	free(last);
 }
 
 void	reverse_rotate_a(t_stack **stack_a)
