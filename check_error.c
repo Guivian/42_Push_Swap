@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:24:53 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/20 20:01:43 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/22 19:28:25 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,21 @@ int	check_error(int argc, char **argv)
 int	check_argv(int argc, char **argv, long int *pre_stack)
 {
 	int	i;
-	int	free_it;
 
 	i = 1;
-	free_it = 0;
 	while (argv[i])
 	{
 		if (ft_isint(argv[i]) == 0)
-			free_it = 1;
+			return (0);
 		if (argv[i][0] == '-' || argv[i][0] == '+')
 			if (argv[i][1] < 48 || argv[i][1] > 57)
-				free_it = 1;
+				return (0);
 		pre_stack[i - 1] = ps_atoi(argv[i]);
 		if (pre_stack[i - 1] > 2147483647 || pre_stack[i - 1] < -2147483648)
-			free_it = 1;
-		if (free_it == 1)
-			break ;
+			return (0);
 		i++;
 	}
 	if (check_duplicate(pre_stack, i, argc) == 0)
-		free_it = 1;
-	if (free_it == 1)
 		return (0);
 	return (1);
 }

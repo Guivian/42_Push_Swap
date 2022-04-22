@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 21:03:23 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/03/11 19:11:04 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/22 19:33:15 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <strings.h>
+# include <stdbool.h>
 
 int			ft_isint(char *str);
 int			ft_write(int i);

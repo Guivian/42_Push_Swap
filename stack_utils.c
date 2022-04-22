@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 18:20:54 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/21 18:41:47 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/22 20:39:23 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ t_stack	*stacknew(int n)
 {
 	t_stack	*temp;
 
-	temp = (t_stack *)malloc(sizeof(t_stack) * 1);
+	temp = malloc(sizeof(t_stack) * 1);
 	if (temp == NULL)
 		return (NULL);
 	temp->n = n;
+	temp->simp_n = -1;
 	temp->next = NULL;
 	return (temp);
 }
@@ -65,7 +66,7 @@ void	printf_list(t_stack *stack)
 	temp = stack;
 	while (temp != NULL)
 	{
-		ft_printf("%d\n", temp->n);
+		ft_printf("%d\n", temp->simp_n);
 		temp = temp->next;
 	}
 }

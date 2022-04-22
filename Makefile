@@ -6,7 +6,7 @@
 #    By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 00:45:07 by lbarbosa          #+#    #+#              #
-#    Updated: 2022/04/20 19:02:24 by lbarbosa         ###   ########.fr        #
+#    Updated: 2022/04/22 20:31:08 by lbarbosa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ NAME = push_swap
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -o
+CFLAGS = -Wall -Wextra -Werror -g -o
 
-C_SRC = check_error.c main.c small_algorithm.c big_algorithm.c stack_utils.c stack_pushtop.c stack_reverserotate.c stack_rotate.c stack_swap_top2.c
+C_SRC = check_error.c init_stack.c main.c small_algorithm.c big_algorithm.c stack_utils.c stack_pushtop.c stack_reverserotate.c stack_rotate.c stack_swap_top2.c
 
 all: $(NAME)
 
