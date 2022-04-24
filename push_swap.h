@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:16:01 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/22 20:34:32 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/24 20:04:50 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ t_stack	*stacknew(int n);
 void	stackadd_front(t_stack **stack, t_stack *new);
 void	stackadd_back(t_stack **stack_a, t_stack *new);
 void	printf_list(t_stack *stack_a);
+void	ft_deallocate(t_stack **stack_a);
 
 #endif

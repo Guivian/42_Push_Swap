@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:44:31 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/22 19:54:11 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/24 20:19:24 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ int	main(int argc, char **argv)
 	init_stack(&stack_a, argc, argv);
 	if (argc == 2)
 	{
-		free(stack_a);
+		ft_deallocate(&stack_a);
 		return (1);
 	}
 	if (check_if_organized(&stack_a) == 1)
 	{
-		free(stack_a);
+		ft_deallocate(&stack_a);
 		return (1);
 	}
 	choose_algorithm(argc, &stack_a);
-	free(stack_a);
+	ft_deallocate(&stack_a);
 }
 
 int	check_if_organized(t_stack **stack_a)
@@ -55,9 +55,7 @@ int	check_if_organized(t_stack **stack_a)
 	}
 	if (temp->next == NULL && i > temp->n)
 	{
-		free(temp);
 		return (0);
 	}
-	free(temp);
 	return (1);
 }
