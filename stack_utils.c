@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 18:20:54 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/24 20:07:28 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/05/02 18:15:16 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*stack_last(t_stack *stack);
 
-t_stack	*stacknew(int n)
+t_stack	*stacknew(int n, int simp_n)
 {
 	t_stack	*temp;
 
@@ -22,7 +22,7 @@ t_stack	*stacknew(int n)
 	if (temp == NULL)
 		return (NULL);
 	temp->n = n;
-	temp->simp_n = -1;
+	temp->simp_n = simp_n;
 	temp->next = NULL;
 	return (temp);
 }
@@ -74,14 +74,14 @@ void	ft_deallocate(t_stack **stack_a)
 	*stack_a = NULL;
 }
 
-/*void	printf_list(t_stack *stack)
+void	printf_list(t_stack *stack)
 {
 	t_stack	*temp;
 
 	temp = stack;
 	while (temp != NULL)
 	{
-		ft_printf("%d\n", temp->simp_n);
+		ft_printf("n: %d	simp_n: %d\n", temp->n, temp->simp_n);
 		temp = temp->next;
 	}
-}*/
+}

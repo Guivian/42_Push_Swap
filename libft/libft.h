@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 21:03:23 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/22 19:33:15 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/27 11:09:15 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+int			*ft_arrcpy(int *src, int *dst, int len);
 
 typedef struct s_list
 {

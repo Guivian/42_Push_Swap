@@ -6,63 +6,70 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:43:34 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/24 20:08:55 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/05/03 17:10:04 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	simplify_input(int *pre_stack, t_stack **stack_a, int argc);
+int		*simplify_input(int *pre_stack, int argc);
 void	sort_array(int *arr, int argc);
-void	swap(int *x, int *y);
 void	bubble_sort(int *arr, int argc);
 
 void	init_stack(t_stack **stack_a, int argc, char **argv)
 {
-	int		*pre_stack;
 	t_stack	*temp;
+	int		*pre_stack;
+	int		*simp_n;
 	int		i;
 
 	pre_stack = malloc(sizeof(int) * (argc));
 	if (pre_stack == NULL)
 		return ;
 	temp = NULL;
+	simp_n = NULL;
 	i = 0;
 	while (argv[++i])
 		pre_stack[i - 1] = ft_atoi(argv[i]);
+	simp_n = simplify_input(pre_stack, argc);
 	i = -1;
-	while (++i < argc - 1)
+	while (++i < (argc - 1))
 	{
-		temp = stacknew(pre_stack[i]);
+		temp = stacknew(pre_stack[i], simp_n[i]);
 		stackadd_back(stack_a, temp);
 		temp = temp->next;
 	}
-//	simplify_input(pre_stack, stack_a, argc);
+	free(simp_n);
 	free(pre_stack);
 }
 
-void	simplify_input(int *pre_stack, t_stack **stack_a, int argc)
+int	*simplify_input(int *pre_stack, int argc)
 {
-	int	*copy;
-	int	i;
-	int	j;
+	int		*copy;
+	int		*temp;
+	int		i;
+	int		j;
 
-	copy = pre_stack;
 	i = -1;
-	sort_array(copy, argc);
+	copy = NULL;
+	temp = NULL;
+	copy = ft_arrcpy(pre_stack, copy, (argc - 1));
+	temp = ft_arrcpy(pre_stack, temp, (argc - 1));
+	sort_array(temp, argc);
 	while (++i < (argc - 1))
 	{
 		j = -1;
 		while (++j < (argc - 1))
-			if (pre_stack[i] == copy[j])
-				pre_stack[i] = j;
+		{
+			if (copy[i] == temp[j])
+			{
+				copy[i] = j;
+				break ;
+			}
+		}
 	}
-	i = -1;
-	while (++i < (argc - 1))
-	{
-		(*stack_a)->simp_n = pre_stack[i];
-		*stack_a = (*stack_a)->next;
-	}
+	free(temp);
+	return (copy);
 }
 
 void	sort_array(int *arr, int argc)
@@ -71,35 +78,27 @@ void	sort_array(int *arr, int argc)
 	int	i;
 
 	i = -1;
-//	temp = arr[i];
-	while (++i < (argc - 1))
+	temp = arr[i + 1];
+	while (++i < (argc - 2))
 		if (arr[i] > temp)
 			temp = arr[i];
 	i = -1;
-	while (++i < (argc - 1))
+	while (++i < (argc - 2))
 	{
 		if (arr[i] == temp)
 		{
-			arr[i] = arr[argc - 1];
-			arr[argc - 1] = temp;
+			arr[i] = arr[argc - 2];
+			arr[argc - 2] = temp;
 		}
 	}
 	bubble_sort(arr, argc);
-}
-
-void	swap(int *x, int *y)
-{
-	int	temp;
-
-	temp = *x;
-	*x = *y;
-	*y = temp;
 }
 
 void	bubble_sort(int *arr, int argc)
 {
 	int		i;
 	int		j;
+	int		temp;
 	bool	swapped;
 
 	i = -1;
@@ -111,7 +110,9 @@ void	bubble_sort(int *arr, int argc)
 		{
 			if (arr[j] > arr[j + 1])
 			{
-				swap(&arr[j], &arr[j + 1]);
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
 				swapped = true;
 			}
 		}

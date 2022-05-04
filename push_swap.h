@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:16:01 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/24 20:04:50 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/05/02 18:08:57 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	swap_top2_b(t_stack **stack_b);
 void	swap_top2_ab(t_stack **stack_a, t_stack **stack_b);
 
 //stack_utils.c
-t_stack	*stacknew(int n);
+t_stack	*stacknew(int n, int simp_n);
 void	stackadd_front(t_stack **stack, t_stack *new);
 void	stackadd_back(t_stack **stack_a, t_stack *new);
 void	printf_list(t_stack *stack_a);

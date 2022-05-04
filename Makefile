@@ -6,7 +6,7 @@
 #    By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 00:45:07 by lbarbosa          #+#    #+#              #
-#    Updated: 2022/04/24 19:51:18 by lbarbosa         ###   ########.fr        #
+#    Updated: 2022/05/03 17:10:23 by lbarbosa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g -o
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -o
 
 C_SRC = check_error.c init_stack.c main.c small_algorithm.c big_algorithm.c stack_utils.c stack_pushtop.c stack_reverserotate.c stack_rotate.c stack_swap_top2.c
 

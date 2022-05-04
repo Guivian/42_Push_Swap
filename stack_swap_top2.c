@@ -15,10 +15,14 @@
 void	swap_top2(t_stack **stack)
 {
 	int	temp;
+	int	s_temp;
 
 	temp = (*stack)->n;
+	s_temp = (*stack)->simp_n;
 	(*stack)->n = (*stack)->next->n;
+	(*stack)->simp_n = (*stack)->next->simp_n;
 	(*stack)->next->n = temp;
+	(*stack)->next->simp_n = s_temp;
 }
 
 void	swap_top2_a(t_stack **stack_a)

@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 16:24:53 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/22 19:28:25 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:41:53 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int	check_error(int argc, char **argv)
 {
 	long int	*pre_stack;
 
-	if (argc == 1)
-		return (0);
 	pre_stack = malloc(sizeof(long int) * (argc));
 	if (pre_stack == NULL)
 		return (0);
