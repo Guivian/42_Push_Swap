@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:48:03 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/04/26 17:51:31 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:24:07 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ void	choose_algorithm(int argc, t_stack **stack_a)
 		three_random_numbers(stack_a);
 	else if (argc == 5 || argc == 6)
 		five_random_numbers(stack_a, &stack_b, argc);
-	else if (argc >= 7 && argc <= 101)
-		big_numbers1(stack_a, &stack_b, argc);
-	else if (argc >= 102)
-		ft_printf("Not Ready Yet!\n");
+	else if (argc >= 7)
+		radix_sort(stack_a, &stack_b, argc);
 }
 
 void	three_random_numbers(t_stack **stack_a)

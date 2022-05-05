@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:44:31 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/05/02 18:14:05 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:12:59 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ int	main(int argc, char **argv)
 		ft_deallocate(&stack_a);
 		return (1);
 	}
-	printf_list(stack_a);
 	choose_algorithm(argc, &stack_a);
-	printf_list(stack_a);
 	ft_deallocate(&stack_a);
 }
 

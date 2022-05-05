@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 18:20:54 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/05/02 18:15:16 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:42:14 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_deallocate(t_stack **stack_a)
 	*stack_a = NULL;
 }
 
-void	printf_list(t_stack *stack)
+/*void	printf_list(t_stack *stack)
 {
 	t_stack	*temp;
 
@@ -84,4 +84,4 @@ void	printf_list(t_stack *stack)
 		ft_printf("n: %d	simp_n: %d\n", temp->n, temp->simp_n);
 		temp = temp->next;
 	}
-}
+}*/

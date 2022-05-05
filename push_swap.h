@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 19:16:01 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/05/02 18:08:57 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:39:32 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-//big_algorithm.c
-void	big_numbers1(t_stack **stack_a, t_stack **stack_b, int argc);
-
 //check_error.c
 int		check_error(int argc, char **argv);
 
 //init_stack.c
 void	init_stack(t_stack **stack_a, int argc, char **argv);
+
+//radix_sort.c
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, int argc);
 
 //small_algorithm.c
 void	choose_algorithm(int argc, t_stack **stack_a);
